@@ -103,10 +103,6 @@ class DiscordAlertManager:
         generator_url = alert.get('generatorURL')
         labels = alert.get('labels', {})
 
-        # AlertManager link
-        if self.alertmanager_url:
-            links.append(f"[📊 AlertManager]({self.alertmanager_url}/#/alerts)")
-
         # Grafana link
         if generator_url:
             links.append(f"[📋 Grafana]({generator_url})")
