@@ -103,15 +103,9 @@ class DiscordAlertManager:
         generator_url = alert.get('generatorURL')
         labels = alert.get('labels', {})
 
-        # AlertManager link
-        if self.alertmanager_url:
-            links.append(f"[📊 AlertManager]({self.alertmanager_url}/#/alerts)")
-
         # Grafana link
-        if self.grafana_url and 'instance' in labels:
-            instance = labels['instance']
-            grafana_url = f"{self.grafana_url}/explore?var-instance={instance}"
-            links.append(f"[📋 Grafana]({grafana_url})")
+        if generator_url:
+            links.append(f"[📋 Grafana]({generator_url})")
 
         # Runbook link
         runbook_url = alert.get('annotations', {}).get('runbook_url')
