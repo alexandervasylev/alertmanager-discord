@@ -1,0 +1,31 @@
+{
+  "receiver": "discord-webhook",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "TestAlert",
+        "severity": "critical",
+        "instance": "localhost:9090",
+        "job": "jobname"
+      },
+      "annotations": {
+        "summary": "This is a test alert",
+        "description": "This alert was triggered via API for testing purposes"
+      },
+      "startsAt": "2023-10-01T12:00:00Z",
+      "endsAt": "2023-10-01T12:00:00Z",
+      "generatorURL": "http://prometheus:9090/graph?g0.expr=up&g0.tab=1"
+    }
+  ],
+  "groupLabels": {},
+  "commonLabels": {
+    "alertname": "TestAlert",
+    "severity": "warning"
+  },
+  "commonAnnotations": {},
+  "externalURL": "http://alertmanager:9093",
+  "version": "4",
+  "groupKey": "{}:{}"
+}
